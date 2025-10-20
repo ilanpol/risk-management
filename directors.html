@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות ניהול הסיכונים - ניר חן יזמות בע"מ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        .header .license {
+            font-size: 0.95em;
+            opacity: 0.85;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 15px 30px;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .toc {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-right: 4px solid #3498db;
+        }
+
+        .toc h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px solid #bdc3c7;
+        }
+
+        .toc li:last-child {
+            border-bottom: none;
+        }
+
+        .toc a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #3498db;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            scroll-margin-top: 80px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-right: 15px;
+            border-right: 4px solid #e74c3c;
+        }
+
+        .section h4 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul, .section ol {
+            margin-right: 30px;
+            margin-bottom: 20px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+        }
+
+        .status-current {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-right: 4px solid #4caf50;
+        }
+
+        .status-current h4 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .status-gap {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-right: 4px solid #f44336;
+        }
+
+        .status-gap h4 {
+            color: #c62828;
+            margin-bottom: 15px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin-right: 0;
+        }
+
+        .check-list li {
+            padding-right: 30px;
+            position: relative;
+        }
+
+        .check-list li:before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .x-list {
+            list-style: none;
+            margin-right: 0;
+        }
+
+        .x-list li {
+            padding-right: 30px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .x-list li:before {
+            content: "✗";
+            position: absolute;
+            right: 0;
+            color: #f44336;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table thead tr {
+            background: #3498db;
+            color: white;
+            text-align: right;
+        }
+
+        table th {
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tbody tr {
+            background: #fff;
+        }
+
+        table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        table tbody tr:hover {
+            background: #e3f2fd;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .badge-critical {
+            background: #d32f2f;
+            color: white;
+        }
+
+        .badge-high {
+            background: #f57c00;
+            color: white;
+        }
+
+        .badge-medium {
+            background: #fbc02d;
+            color: black;
+        }
+
+        .badge-low {
+            background: #689f38;
+            color: white;
+        }
+
+        .badge-not-started {
+            background: #ff5252;
+            color: white;
+        }
+
+        .commitment-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .commitment-box h3 {
+            color: white;
+            border: none;
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+
+        .commitment-box ol {
+            margin-right: 25px;
+        }
+
+        .commitment-box li {
+            margin-bottom: 12px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-right: 4px solid #2196f3;
+        }
+
+        .info-box strong {
+            color: #1565c0;
+        }
+
+        .milestone-box {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-right: 4px solid #ff9800;
+        }
+
+        .milestone-box h4 {
+            color: #e65100;
+            margin-bottom: 12px;
+        }
+
+        .milestone-box ul {
+            margin-right: 25px;
+        }
+
+        .signature-section {
+            margin-top: 60px;
+            padding: 30px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+
+        .signature-table {
+            margin-top: 30px;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        @media print {
+            .nav, .print-button, .nav-button {
+                display: none;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+            
+            .print-button {
+                bottom: 15px;
+                left: 15px;
+                padding: 12px 20px;
+            }
+        }
+
+        .circular-reference {
+            background: #fff9c4;
+            padding: 15px;
+            border-radius: 5px;
+            border-right: 3px solid #fbc02d;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        .risk-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>מדיניות ניהול הסיכונים</h1>
+        <div class="subtitle">ניר חן יזמות בע"מ</div>
+        <div class="subtitle">ח.פ. 513475376</div>
+        <div class="license">
+            רישיון למתן אשראי – מורחב | מספר רישיון: 54604
+        </div>
+    </div>
+
+    <div class="nav">
+        <button class="nav-button" onclick="scrollToTop()">🔝 חזרה למעלה</button>
+        <button class="nav-button" onclick="window.print()">🖨️ הדפסה</button>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            
+            <!-- תוכן עניינים -->
+            <div class="toc" id="toc">
+                <h2>📑 תוכן עניינים</h2>
+                <ul>
+                    <li><a href="#intro"><span>מבוא ורקע כללי</span> <span>3</span></a></li>
+                    <li><a href="#purpose"><span>מטרת המסמך וגישת החברה</span> <span>4</span></a></li>
+                    <li><a href="#board"><span>תפקידי הדירקטוריון</span> <span>5</span></a></li>
+                    <li><a href="#risk-manager"><span>מנהל הסיכונים</span> <span>6</span></a></li>
+                    <li><a href="#reporting"><span>הדיווחים הנדרשים</span> <span>7</span></a></li>
+                    <li><a href="#framework"><span>מסגרת ניהול הסיכונים</span> <span>8</span></a></li>
+                    <li><a href="#commitment"><span>הצהרת מחויבות ליישום</span> <span>9</span></a></li>
+                    <li style="font-weight: bold; color: #e74c3c; margin-top: 15px;">תחומי הסיכון לפי חוזר 2024-10-2:</li>
+                    <li><a href="#risk-1"><span>1️⃣ סיכון אשראי</span> <span>10</span></a></li>
+                    <li><a href="#risk-2"><span>2️⃣ סיכון נזילות</span> <span>13</span></a></li>
+                    <li><a href="#risk-3"><span>3️⃣ סיכון שוק</span> <span>16</span></a></li>
+                    <li><a href="#risk-4"><span>4️⃣ סיכון תפעולי</span> <span>18</span></a></li>
+                    <li><a href="#risk-5"><span>5️⃣ סיכון משפטי ורגולטורי</span> <span>22</span></a></li>
+                    <li><a href="#risk-6"><span>6️⃣ סיכון טכנולוגי וסייבר</span> <span>24</span></a></li>
+                    <li><a href="#risk-7"><span>7️⃣ סיכון הלבנת הון ומימון טרור</span> <span>27</span></a></li>
+                    <li><a href="#risk-8"><span>8️⃣ סיכון מוניטין</span> <span>30</span></a></li>
+                    <li><a href="#risk-9"><span>9️⃣ סיכון אסטרטגי</span> <span>31</span></a></li>
+                    <li style="margin-top: 15px;"><a href="#summary"><span>מיפוי ודירוג הסיכונים</span> <span>33</span></a></li>
+                    <li><a href="#signatures"><span>אישור וחתימות</span> <span>36</span></a></li>
+                </ul>
+            </div>
+
+            <!-- מבוא -->
+            <section class="section" id="intro">
+                <h2>מבוא ורקע כללי</h2>
+                <p>
+                    החברה הגישה בקשה להסדיר את פעילותה הפיננסית תחת רישיון מורחב למתן אשראי בהתאם לחוק הפיקוח על שירותים פיננסיים מוסדרים (שירותים פיננסיים מוסדרים), תשע"ו–2016.
+                </p>
+                <p>
+                    לאור מורכבות הפעילות הפיננסית והרגולטורית, ניהול סיכונים מהווה נדבך קריטי בבקרת הפעילות, בהגנה על הלקוחות, ובהבטחת חוסן והתנהלות תקינה של הגוף המפוקח.
+                </p>
+                
+                <div class="circular-reference">
+                    <strong>📋 חוזר נותני שירותים פיננסים 2024-10-2</strong><br>
+                    בתאריך <strong>21 בפברואר 2024</strong>, יצא חוזר נותני שירותים פיננסים 2024-10-2 "ניהול סיכונים אצל נותן שירותים פיננסים מוסדרים" (שהינו תיקון לחוזר קודם מתאריך 29 במאי 2022).
+                    <br><br>
+                    התיקון לחוזר הרחיב את הוראותיו כך שיחולו גם על <strong>בעלי רישיון מורחב למתן אשראי</strong>, ותחילתו של חוזר זה לגבי רישיון מורחב הינו <strong>ביום 1 ביולי 2024</strong>.
+                </div>
+
+                <p>
+                    <strong>מסמך זה נכתב בהתאם לדרישות חוזר 2024-10-2</strong> ומפרט את המדיניות, התהליכים והנהלים שהחברה מתחייבת ליישם במהלך 12 החודשים הקרובים.
+                </p>
+            </section>
+
+            <!-- מטרת המסמך -->
+            <section class="section" id="purpose">
+                <h2>מטרת המסמך וגישת החברה</h2>
+                
+                <h3>מטרת מסמך זה וחשיבות ניהול הסיכונים:</h3>
+                
+                <ol>
+                    <li>לקבוע את המדיניות, תהליכי העבודה ושגרות הדיווח הדרושים לזיהוי, מדידה, ניטור, ניהול ודיווח של הסיכונים שאליהם החברה חשופה או עשויה להיות חשופה בכל שלב מפעילותה, <strong>בהתאם לדרישות חוזר 2024-10-2</strong>.</li>
+                    
+                    <li>ניהול סיכונים מהווה רכיב יסוד בניהול החברה, במטרה לשמר את יציבותה, לאפשר רציפות תפעולית ולקדם את יעדיה.</li>
+                    
+                    <li>מערך ניהול הסיכונים תומך בזיהוי, הערכה והתמודדות עם סיכונים, תוך התייחסות לעוצמתם, הסתברות התממשותם והשפעתם האפשרית.</li>
+                    
+                    <li>התהליך מבוסס גישה מתודולוגית, הכוללת:
+                        <ul>
+                            <li><strong>זיהוי סיכונים</strong> – מיפוי שנתי של סיכונים קיימים וחדשים בכל תחומי הפעילות</li>
+                            <li><strong>הערכת סיכונים</strong> – דירוג סיכונים לפי הסתברות ועוצמה (השפעה אפשרית)</li>
+                            <li><strong>קביעת מסגרת סיכון</strong> – הגדרת גבולות, מדיניות וצפי סיכון מקובלים</li>
+                            <li><strong>ניהול ובקרה</strong> – תכנון מנגנוני צמצום, הקמה של בקרות ומעקב מתמשך והערכת אפקטיביות הבקרות</li>
+                            <li><strong>דיווח תקופתי</strong> – דו"חות לדירקטוריון ולהנהלה על ממצאים, מגמות ותיקונים נדרשים</li>
+                            <li><strong>שיפור מתמיד</strong> – עדכון שוטף של מערך הסיכונים לאור שינויים חיצוניים ופנימיים</li>
+                        </ul>
+                    </li>
+                    
+                    <li>החברה מוצאת חשיבות לאיזון בין משאבים, סדרי עדיפויות ותועלות עסקיות בתהליך ניהול הסיכונים.</li>
+                    
+                    <li>המסמך מפרט את גורמי הסיכון הרלוונטיים לחברה <strong>כפי שמוגדרים בחוזר 2024-10-2</strong>, שמקורם בסביבה הכללית, בענף, ובמאפיינים הפנימיים של פעילותה.</li>
+                    
+                    <li>המסמך כולל פירוט של אמצעים ואבני דרך שייושמו, במטרה להתמודד עם הסיכונים, לזהותם, ככל הניתן עוד בשלב התכנון ובמקרה הצורך בזמן אמת ולבסס תשתית לקבלת החלטות מושכלת.</li>
+                    
+                    <li>יצויין כי החברה רואה במסמך זה כמסמך מסגרת דינמית ומתעדכנת לניהול סיכונים: עקרונות, מחויבות ויישום לאורך זמן.</li>
+                </ol>
+            </section>
+
+            <!-- תפקידי הדירקטוריון -->
+            <section class="section" id="board">
+                <h2>תפקידי הדירקטוריון</h2>
+                
+                <p>
+                    הדירקטוריון מהווה את הרשות האסטרטגית העליונה לניהול הסיכונים בארגון, ותחת אחריותו לקבוע את המסגרת הכללית לניהול סיכונים, לאשר את מדיניות ניהול הסיכונים של החברה, ולוודא כי קיימים תהליכים, כלים ומשאבים מתאימים המאפשרים ניהול אפקטיבי, עקבי ומבוקר של כלל הסיכונים הנובעים מפעילות החברה.
+                </p>
+
+                <h3>במסגרת אחריותו, הדירקטוריון נדרש:</h3>
+
+                <ol>
+                    <li><strong>לאשר את מדיניות ניהול הסיכונים של החברה</strong> – לרבות הגדרת סוגי הסיכונים המהותיים לפי חוזר 2024-10-2, גישת החברה לזיהוי, ניתוח, ניהול, ניטור ובקרה של סיכונים, וקביעת גבולות סיכון מקובלים.</li>
+                    
+                    <li><strong>לוודא יישום והטמעה</strong> של מדיניות ניהול הסיכונים בכלל רבדי החברה, תוך הקפדה על נהלים מתאימים, הגדרת תחומי אחריות וסמכויות, והטמעת תרבות ניהול סיכונים.</li>
+                    
+                    <li><strong>לקבל דיווחים תקופתיים</strong> ממנהל הסיכונים, מקצין הציות, ומהנהלת החברה – לצורך קבלת תמונת מצב עדכנית, זיהוי מגמות וסיכונים מתפתחים.</li>
+                    
+                    <li><strong>לבחון אחת לשנה לפחות</strong> את מדיניות ניהול הסיכונים ולוודא כי היא מעודכנת ורלוונטית.</li>
+                    
+                    <li><strong>לאשר הקצאת משאבים מתאימים</strong> (אנושיים, טכנולוגיים ותקציביים) לניהול הסיכונים.</li>
+                    
+                    <li><strong>לקבוע מנגנוני פיקוח ובקרה</strong> על פעילות ניהול הסיכונים.</li>
+                    
+                    <li><strong>לדון ולהכריע באירועים מהותיים</strong> בתחום ניהול הסיכונים.</li>
+                </ol>
+            </section>
+
+            <!-- מנהל הסיכונים -->
+            <section class="section" id="risk-manager">
+                <h2>מנהל הסיכונים</h2>
+                
+                <p>
+                    מנהל הסיכונים בחברה הינו <strong>רו"ח אילן קאופמן</strong>, שהינו רו"ח המתמחה במתן שירותים נרחבים לנותני שירותים פיננסיים הן בתחום הציות, הן בתחום ניהול הסיכונים והן כרו"ח בעל משרד המתמחה בכך.
+                </p>
+
+                <h3>סמכויות ואחריות:</h3>
+                <ul>
+                    <li>החברה הקצתה למנהל הסיכונים את כלל הסמכויות והאמצעים הנדרשים</li>
+                    <li>גישה ישירה לעובדים, מנהלים וכלל החומרים הנדרשים בזמן אמת</li>
+                    <li>סמכות לכנס ישיבת דירקטוריון בתוך 7 ימים במקרה הצורך</li>
+                    <li>גישה ישירה למנכ"ל וליו"ר הדירקטוריון</li>
+                    <li>מעורבות בהחלטות משמעותיות בחברה</li>
+                </ul>
+
+                <div class="info-box">
+                    <strong>עצמאות מקצועית:</strong> מנהל הסיכונים לא ימלא כל תפקיד אחר בחברה הכרוך בנטילת סיכון והעלול לפגוע בעצמאות ניהול הסיכונים. הוא לא יישא באחריות ניהולית או פיננסית ביחס ליחידות עסקיות מייצרות הכנסה.
+                </div>
+            </section>
+
+            <!-- הדיווחים הנדרשים -->
+            <section class="section" id="reporting">
+                <h2>הדיווחים הנדרשים</h2>
+                
+                <p>
+                    במסגרת תפקידו, יגיש מנהל הסיכונים לדירקטוריון החברה דיווח שנתי מקיף המתאר את מצב ניהול הסיכונים בחברה, <strong>בהתאם להוראות חוזר 2024-10-2 ורשות שוק ההון</strong>.
+                </p>
+
+                <h3>מטרות הדיווח:</h3>
+                <ul>
+                    <li>הצגת תמונת מצב עדכנית של פרופיל הסיכונים של החברה</li>
+                    <li>הערכת אפקטיביות של תהליך ניהול הסיכונים והבקרות הקיימות</li>
+                    <li>הצגת חריגות מהמדיניות או ממצאים מהותיים שאותרו</li>
+                    <li>מתן המלצות לשיפור תהליכים או עדכון מדיניות</li>
+                </ul>
+
+                <h3>דיווחים נוספים:</h3>
+                <p>בנוסף לדיווח השנתי, ידווח מנהל הסיכונים <strong>רבעונית</strong> לדירקטוריון על:</p>
+                <ul>
+                    <li>התקדמות יישום תוכנית ניהול הסיכונים</li>
+                    <li>סיכון אשראי ואיכות תיק האשראי</li>
+                    <li>סיכון נזילות ומצב תזרים מזומנים</li>
+                    <li>אירועים מהותיים שאירעו ברבעון</li>
+                </ul>
+            </section>
+
+            <!-- מסגרת ניהול הסיכונים -->
+            <section class="section" id="framework">
+                <h2>מסגרת ניהול הסיכונים (Framework)</h2>
+                
+                <p>
+                    במסגרת ניהול הסיכונים של החברה, קובעת החברה בנוהל זה את המדיניות, תהליכי העבודה ושגרות הדיווח הנדרשות לשם זיהוי, מדידה, ניטור ניהול ודיווח של הסיכונים אליהם היא חשופה או עשויה להיות חשופה, <strong>בהתאם לדרישות חוזר 2024-10-2</strong>.
+                </p>
+
+                <h3>עקרונות יסוד:</h3>
+                <ol>
+                    <li>ניהול הסיכונים יתאים לאופי, היקף ומורכבות הסיכונים הגלומים בפעילותה של החברה.</li>
+                    <li>יהיה שלוב בממשל התאגידי ומשפיע בקבלת ההחלטות של החברה.</li>
+                    <li>יהיה רציף ומתמשך, ויביא בחשבון השפעות הדדיות בין סיכונים שונים.</li>
+                    <li><strong>יעמוד בכל דרישות חוזר 2024-10-2</strong> לרבות מדיניות, נהלים, בקרות ודיווחים כנדרש.</li>
+                </ol>
+            </section>
+
+            <!-- הצהרת מחויבות -->
+            <section class="section" id="commitment">
+                <h2>הצהרת מחויבות ליישום</h2>
+                
+                <div class="commitment-box">
+                    <h3>החברה מצהירה ומתחייבת בזאת:</h3>
+                    <ol>
+                        <li><strong>ליישם את כלל הנהלים והמדיניות</strong> הנדרשים על פי חוזר 2024-10-2 <strong>במהלך 12 החודשים הקרובים</strong> (מאוקטובר 2025 עד אוקטובר 2026), בהתאם ללוח הזמנים המפורט בכל סיכון.</li>
+                        
+                        <li><strong>להקצות את המשאבים הנדרשים</strong> - אנושיים, כספיים וטכנולוגיים - ליישום מלא של דרישות החוזר.</li>
+                        
+                        <li><strong>לדווח רבעונית לדירקטוריון</strong> על התקדמות יישום, סטיות מלוח הזמנים, אתגרים והמלצות.</li>
+                        
+                        <li><strong>לעדכן את מדיניות ניהול הסיכונים</strong> אחת לשנה לפחות, או בעקבות שינויים מהותיים.</li>
+                        
+                        <li><strong>לפעול באפס סובלנות</strong> כלפי חריגות מהנהלים והמדיניות שיאושרו.</li>
+                        
+                        <li><strong>להטמיע תרבות ארגונית</strong> של ניהול סיכונים בכל רבדי החברה.</li>
+                    </ol>
+                    
+                    <p style="margin-top: 20px; font-size: 1.1em; font-weight: bold;">
+                        מסמך זה מהווה את תוכנית העבודה המחייבת ליישום מלא של דרישות חוזר 2024-10-2.
+                    </p>
+                </div>
+            </section>
+
+            <!-- הסיכונים -->
+            <section class="section">
+                <h2>תחומי פעילות בסיכון לפי חוזר 2024-10-2</h2>
+                
+                <p>חוזר נותני שירותים פיננסים 2024-10-2 מגדיר <strong>תשעה סוגי סיכונים מרכזיים</strong> שעל החברה לנהל:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 30px 0;">
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-right: 4px solid #2196f3;">
+                        <strong>1️⃣ סיכון אשראי</strong>
+                    </div>
+                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-right: 4px solid #4caf50;">
+                        <strong>2️⃣ סיכון נזילות</strong>
+                    </div>
+                    <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-right: 4px solid #ff9800;">
+                        <strong>3️⃣ סיכון שוק</strong>
+                    </div>
+                    <div style="background: #ffebee; padding: 15px; border-radius: 8px; border-right: 4px solid #f44336;">
+                        <strong>4️⃣ סיכון תפעולי</strong>
+                    </div>
+                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-right: 4px solid #9c27b0;">
+                        <strong>5️⃣ סיכון משפטי ורגולטורי</strong>
+                    </div>
+                    <div style="background: #e0f2f1; padding: 15px; border-radius: 8px; border-right: 4px solid #009688;">
+                        <strong>6️⃣ סיכון טכנולוגי וסייבר</strong>
+                    </div>
+                    <div style="background: #fce4ec; padding: 15px; border-radius: 8px; border-right: 4px solid #e91e63;">
+                        <strong>7️⃣ סיכון הלבנת הון ומימון טרור</strong>
+                    </div>
+                    <div style="background: #f1f8e9; padding: 15px; border-radius: 8px; border-right: 4px solid #8bc34a;">
+                        <strong>8️⃣ סיכון מוניטין</strong>
+                    </div>
+                    <div style="background: #ede7f6; padding: 15px; border-radius: 8px; border-right: 4px solid #673ab7;">
+                        <strong>9️⃣ סיכון אסטרטגי וסיכון עסקי</strong>
+                    </div>
+                </div>
+
+                <p>להלן פירוט כל סיכון, המצב הנוכחי בחברה, הפערים לעומת דרישות החוזר, ותוכנית היישום המפורטת.</p>
+            </section>
+
+            <!-- סיכון אשראי -->
+            <section class="section" id="risk-1">
+                <h2><span class="risk-number">1</span> סיכון אשראי</h2>
+                
+                <h3>הגדרת הסיכון לפי החוזר</h3>
+                <p>
+                    <strong>סיכון אשראי</strong> הוא הסיכון שלקוח או צד נגדי לא יעמדו בהתחייבויותיהם החוזיות בהתאם לתנאים המוסכמים, באופן מלא או חלקי, עקב כשל פיננסי, התרשלות, פעולה מכוונת, או בשל חשיפה לסיכונים נוספים.
+                </p>
+                <p>מדובר בסיכון מהותי עבור החברה, שכן מתן אשראי הוא מרכיב מרכזי בפעילותה.</p>
+
+                <h3>דרישות חוזר 2024-10-2 לניהול סיכון אשראי</h3>
+                <p>החוזר מחייב את החברה ליישם את הנהלים והמדיניות הבאים:</p>
+                <ol>
+                    <li><strong>מדיניות אשראי מאושרת</strong> על ידי הדירקטוריון, הכוללת קריטריונים, חשיפות מקסימליות, דרישות בטחונות ותהליך אישור מדורג</li>
+                    <li><strong>תהליך אישור אשראי מובנה ומתועד</strong>, לרבות ועדת אשראי או מנגנון אישור רב-שלבי</li>
+                    <li><strong>הגבלות על ריכוזיות</strong> - הגדרת אחוז מקסימלי מתיק האשראי ללקוח בודד וזיהוי לקוחות קשורים</li>
+                    <li><strong>ניטור שוטף</strong> של איכות תיק האשראי - דירוג פנימי, מעקב עיכובים, התראות מוקדמות</li>
+                    <li><strong>הפרשות</strong> להפסדי אשראי צפויים, בהתאם לתקני חשבונאות</li>
+                    <li><strong>דיווחים תקופתיים</strong> (לפחות רבעוניים) לדירקטוריון על הרכב תיק האשראי, ריכוזיות ואיכות</li>
+                </ol>
+
+                <div class="status-current">
+                    <h4>✅ מצב נוכחי בחברה - קיים:</h4>
+                    <ul class="check-list">
+                        <li>תהליך בדיקת נאותות (Due Diligence) לרוב הלקוחות בפועל</li>
+                        <li>שימוש במידע מ-Dun & Bradstreet</li>
+                        <li>בקרות יומיות ומידע שוטף מקבוצות נש"פים</li>
+                        <li>ניר חן מטפל באופן פעיל בהפרות ובאכיפה</li>
+                        <li>דיווח כללי לדירקטוריון בפגישות</li>
+                    </ul>
+                </div>
+
+                <div class="status-gap">
+                    <h4>❌ פערים לעומת דרישות החוזר - חסר:</h4>
+                    <ul class="x-list">
+                        <li>אין מדיניות אשראי כתובה ומאושרת על ידי הדירקטוריון</li>
+                        <li>אין תהליך אישור מתועד - התיעוד נעשה בווטסאפ בלבד</li>
+                        <li>מאשר יחיד - ניר חן בלבד - אין ועדת אשראי כנדרש בחוזר</li>
+                        <li>אין מדיניות כתובה לריכוזיות - הניהול נעשה באופן אד-הוק</li>
+                        <li>אין מנגנון ניטור פורמלי של איכות תיק האשראי</li>
+                        <li>אין דיווחים תקופתיים מובנים לדירקטוריון כנדרש</li>
+                        <li>אין נוהלי אישור מדורגים לפי גודל האשראי</li>
+                    </ul>
+                </div>
+
+                <h3>🎯 דרכי ההתמודדות - תוכנית יישום למימוש דרישות החוזר</h3>
+                <p><strong>החברה מתחייבת ליישם את הפעולות הבאות במהלך 12 החודשים הקרובים:</strong></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>מס'</th>
+                            <th>פעולה</th>
+                            <th>דרישת החוזר</th>
+                            <th>מועד יעד</th>
+                            <th>אחראי</th>
+                            <th>סטטוס</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.1</td>
+                            <td>גיבוש מדיניות אשראי כתובה מקיפה (10-15 עמודים)</td>
+                            <td>סעיף 4.1 בחוזר</td>
+                            <td>חודש 1-2</td>
+                            <td>מנכ"ל + מנה"ס</td>
+                            <td><span class="badge badge-not-started">טרם החל</span></td>
+                        </tr>
+                        <tr>
+                            <td>1.2</td>
+                            <td>אישור מדיניות האשראי בדירקטוריון ותיעוד ההחלטה</td>
+                            <td>סעיף 3.2 בחוזר</td>
+                            <td>חודש 2</td>
+                            <td>דירקטוריון</td>
+                            <td><span class="badge badge-not-started">טרם החל</span></td>
+                        </tr>
+                        <tr>
+                            <td>1.3</td>
+                            <td>הקמת ועדת אשראי עם לפחות 2 חברים והגדרת סמכויות מדורגות</td>
+                            <td>סעיף 4.1.2 בחוזר</td>
+                            <td>חודש 1</td>
+                            <td>מנכ"ל + דירקטוריון</td>
+                            <td><span class="badge badge-critical">קריטי</span></td>
+                        </tr>
+                        <tr>
+                            <td>1.4</td>
+                            <td>כתיבת נוהל אישור אשראי מפורט עם טפסי החלטה סטנדרטיים</td>
+                            <td>סעיף 4.1.2 בחוזר</td>
+                            <td>חודש 2</td>
+                            <td>מנכ"ל + מנה"ס</td>
+                            <td><span class="badge badge-not-started">טרם החל</span></td>
+                        </tr>
+                        <tr>
+                            <td>1.5</td>
+                            <td>קביעת מדיניות ריכוזיות: אחוז מקסימלי ללקוח בודד, זיהוי לקוחות קשורים</td>
+                            <td>סעיף 4.1.3 בחוזר</td>
+                            <td>חודש 2</td>
+                            <td>מנכ"ל + דירקטוריון</td>
+                            <td><span class="badge badge-not-started">טרם החל</span></td>
+                        </tr>
+                        <tr>
+                            <td>1.6</td>
+                            <td>יצירת דו"ח ניטור תיק אשראי חודשי עם כל המדדים הנדרשים</td>
+                            <td>סעיף 4.1.4 בחוזר</td>
+                            <td>חודש 3</td>
+                            <td>מנכ"ל + הנה"ח</td>
+                            <td><span class="badge badge-not-started">טרם החל</span></td>
+                        </tr>
+                        <tr>
+                            <td>1.7</td>
+                            <td>קביעת מתודולוגיה להפרשות להפסדי אשראי צפויים</td>
+                            <td>סעיף 4.1.5 בחוזר</td>
+                            <td>חודש 4</td>
+                            <td>רו"ח + מנה"ס</td>
+                            <td><span class="badge badge-not-started">טרם החל</span></td>
+                        </tr>
+                        <tr>
+                            <td>1.8</td>
+                            <td>דיווח רבעוני לדירקטוריון על סיכון אשראי (תבנית קבועה)</td>
+                            <td>סעיף 3.3 בחוזר</td>
+                            <td>החל מרבעון 2</td>
+                            <td>מנהל סיכונים</td>
+                            <td><span class="badge badge-not-started">טרם החל</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="milestone-box">
+                    <h4>📍 אבני דרך קריטיות:</h4>
+                    <ul>
+                        <li>✅ <strong>סוף חודש 1:</strong> ועדת אשראי פעילה</li>
+                        <li>✅ <strong>סוף חודש 2:</strong> מדיניות אשראי מאושרת + נוהל אישור מתפקד</li>
+                        <li>✅ <strong>סוף חודש 3:</strong> מערכת ניטור פועלת</li>
+                        <li>✅ <strong>סוף חודש 4:</strong> עמידה מלאה בדרישות החוזר לסיכון אשראי</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- יש להוסיף את שאר הסיכונים כאן באותו מבנה... -->
+
+            <!-- סיכום -->
+            <section class="section" id="summary">
+                <h2>סיכום - מיפוי ודירוג הסיכונים</h2>
+                <p>הטבלה הבאה מסכמת את כלל הסיכונים, דירוגם והעדיפות ליישום:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>סיכון</th>
+                            <th>דירוג פער</th>
+                            <th>עדיפות יישום</th>
+                            <th>מועד יעד עיקרי</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>תפעולי</strong></td>
+                            <td><span class="badge badge-critical">קריטי</span></td>
+                            <td>1</td>
+                            <td>חודשים 1-3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>סייבר</strong></td>
+                            <td><span class="badge badge-critical">קריטי</span></td>
+                            <td>1</td>
+                            <td>חודשים 1-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>אשראי</strong></td>
+                            <td><span class="badge badge-critical">קריטי</span></td>
+                            <td>1</td>
+                            <td>חודשים 1-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>הליבה</strong></td>
+                            <td><span class="badge badge-high">גבוה</span></td>
+                            <td>2</td>
+                            <td>חודשים 1-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>נזילות</strong></td>
+                            <td><span class="badge badge-high">גבוה</span></td>
+                            <td>2</td>
+                            <td>חודשים 2-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>משפטי/רגולטורי</strong></td>
+                            <td><span class="badge badge-high">גבוה</span></td>
+                            <td>2</td>
+                            <td>חודשים 2-4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>שוק</strong></td>
+                            <td><span class="badge badge-medium">בינוני</span></td>
+                            <td>3</td>
+                            <td>חודשים 5-6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>אסטרטגי</strong></td>
+                            <td><span class="badge badge-medium">בינוני</span></td>
+                            <td>3</td>
+                            <td>חודשים 6-12</td>
+                        </tr>
+                        <tr>
+                            <td><strong>מוניטין</strong></td>
+                            <td><span class="badge badge-low">נמוך</span></td>
+                            <td>4</td>
+                            <td>חודשים 6-12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- חתימות -->
+            <section class="section signature-section" id="signatures">
+                <h2>אישור מסמך נוהל ניהול סיכונים וחתימות נושאי המשרה</h2>
+                
+                <p>
+                    בהתאם לחובות החלות על החברה לפי הוראות רשות שוק ההון, ביטוח וחיסכון, ולאור חשיבות ניהול הסיכונים לצורך שמירה על יציבותה התפעולית, עמידה בדרישות רגולציה, ומניעת חשיפות פיננסיות מהותיות – הובא נוהל זה לאישור פורמלי של דירקטוריון החברה.
+                </p>
+
+                <div class="info-box">
+                    הדירקטוריון התכנס לישיבתו ביום <strong>25 בספטמבר 2025</strong>, ובמסגרתה נדון והוצג נוהל ניהול הסיכונים של החברה. הדירקטוריון עיין במסמך, דן בתוכנו, קיבל הבהרות ככל שנדרשו, והחליט לאשר את המסמך במתכונתו הנוכחית.
+                </div>
+
+                <h3>פרטי החתימות בחברת ניר חן יזמות בע"מ</h3>
+
+                <table class="signature-table">
+                    <thead>
+                        <tr>
+                            <th>שם ושם משפחה</th>
+                            <th>תפקיד</th>
+                            <th>ת"ז</th>
+                            <th>חתימה</th>
+                            <th>תאריך</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ניר חן</strong></td>
+                            <td>יו"ר הדירקטוריון ומנכ"ל</td>
+                            <td>_________</td>
+                            <td>______________</td>
+                            <td>__________</td>
+                        </tr>
+                        <tr>
+                            <td>___________</td>
+                            <td>דירקטור</td>
+                            <td>_________</td>
+                            <td>______________</td>
+                            <td>__________</td>
+                        </tr>
+                        <tr>
+                            <td>___________</td>
+                            <td>דירקטור</td>
+                            <td>_________</td>
+                            <td>______________</td>
+                            <td>__________</td>
+                        </tr>
+                        <tr>
+                            <td><strong>רו"ח אילן קאופמן</strong></td>
+                            <td>מנהל סיכונים</td>
+                            <td>024678070</td>
+                            <td>______________</td>
+                            <td>__________</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+                    <p style="font-size: 0.9em; color: #666;">
+                        <strong>מסמך זה הוכן על ידי:</strong> רו"ח אילן קאופמן, מנהל סיכונים<br>
+                        <strong>בשיתוף:</strong> אילן פולק, קצין ציות<br>
+                        <strong>תאריך:</strong> אוקטובר 2025
+                    </p>
+                    <p style="font-size: 0.85em; color: #999; margin-top: 15px;">
+                        מסמך זה יעודכן אחת לשנה או בעת צורך בהתאם לשינויים בפעילות החברה, ברגולציה או בסביבה העסקית.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>ניר חן יזמות בע"מ</strong></p>
+        <p>רישיון למתן אשראי – מורחב | מספר: 54604</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">מדיניות ניהול הסיכונים | עדכון: אוקטובר 2025</p>
+    </div>
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ הדפס מסמך
+    </button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight current section in navigation
+        window.addEventListener('scroll', function() {
+            // Add any scroll-based highlighting logic here if needed
+        });
+    </script>
+</body>
+</html>
